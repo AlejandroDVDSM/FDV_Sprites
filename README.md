@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/b59d92a7-201d-46f3-8b63-1712529a9984)# FDV_Sprites
+# FDV_Sprites
 
 ## **_1. Agregar el atlas de sprites del personaje a la escena. Configurar el sprite como múltiple y subdividirlo para tener acceso a los sprites para generar las animaciones. Agregar una de las imágenes a la escena._**
 
@@ -16,15 +16,15 @@ Ahora que el atlas ha sido trozeado y se han generado los distintos sprites, añ
 
 ![image](https://github.com/user-attachments/assets/b98cdfd0-e1ac-451c-979d-c461dafb23a7)
 
-## **_2. Creamos un objeto 2D, arrastrando un conjunto de imágenes que selecciones al objeto añadiremos una animación. Agregar al personaje la animación “Walk Down”. Añadir otra imagen y generarle otra animación.  De esa forma Unity crea un objeto Animation, la primera vez que se crea, también añade un objeto Animator Controller._**
+## **_2. Agregar al personaje la animación “Walk Down”._**
 
 Ahora crearemos una animación para el objeto. Desde el sprite atlas, seleccionamos el conjunto de sprites que compondrán nuestra animación y lo soltamos en la escena. Esto creará un GameObject con el componente `Animator` y una animación, la cual ya estará incluida en el `Animator`.
 
-![image](https://github.com/user-attachments/assets/77380629-97f4-40f7-b845-1f523fd15641)
+![image](https://github.com/user-attachments/assets/535abda4-0b4a-46c9-8999-40e202c8ca68)
 
-![Ejercicio 2](https://github.com/user-attachments/assets/77857dba-178c-409c-bb59-edbef9131c65)
+![Ejercicio 2](https://github.com/user-attachments/assets/a066f40a-fd58-4371-9c4b-c7c901d89c4f)
 
-## **_3. Creamos los scripts para controlar el movimiento para el personaje. Inicialmente vamos a hacer una versión sin salto. Añadir los scripts necesarios para moverlo por la pantalla. En este caso sólo tendremos que mover las coordenadas (X, Y). _**
+## **_3. Crear los scripts para controlar el movimiento del personaje. En este caso sólo tendremos que mover las coordenadas (X, Y)._**
 
 Creamos un script y lo añadimos al GameObject del personaje:
 
@@ -53,9 +53,12 @@ public class PlayerMovement : MonoBehaviour
 }
 ```
 
+![image](https://github.com/user-attachments/assets/0615b4da-82cf-40a8-afba-03596c2aa29d)
+
+
 ![Ejercicio3](https://github.com/user-attachments/assets/35ee98c7-f2ee-48cd-89e7-37a0ea11c08a)
 
-## **_4. Además necesitamos que el sprite se oriente hacia donde camina, podemos hacerlo usando la propiedad Flip en el eje X en función de si se está moviendo hacia la izquierda (movimiento negativo) o hacia la derecha (movimiento positivo)._**
+## **_4. Orientar el sprite hacia donde camina._**
 
 ```c#
 using System;
@@ -102,7 +105,7 @@ Creamos una animación para camminar hacia arriba y otra para abajo. Además, cr
 
 ![image](https://github.com/user-attachments/assets/af779083-aae5-40bd-902f-ec21d8f5eb0e)
 
-Las condiciones de las transiciones son:
+Las condiciones para las transiciones son:
 * `[Idle] --> [Walk_Lateral] when isWalking is true`
 * `[Walk_Lateral] --> [Idle] when isWalking is false`
 
